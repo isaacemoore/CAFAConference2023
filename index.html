@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      #track {
+        width: 100vw;
+        height: 94vh;
+        top: 6vh;
+        position: absolute;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      .box {
+        min-width: 100vw;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgb(50,50,50);
+        background-blend-mode: lighten;
+      }
+      .box:nth-child(1) {
+        background-image: url("https://scontent.fala5-2.fna.fbcdn.net/v/t1.6435-9/75407822_1524381411037069_8343161409147764736_n.jpg?_nc_cat=100&cb=99be929b-3346023f&ccb=1-7&_nc_sid=4dc865&_nc_ohc=P7K40-3FbOUAX9g-rrx&_nc_ht=scontent.fala5-2.fna&oh=00_AfBAhqfplpCPhGOugnCRcIi_E28ewhRJMZgsXDdUFbyv2Q&oe=64FD4C40");
+        animation: move 25s cubic-bezier(0.3, 0.05, 0.15, 1) 0s infinite, paralaxa 25s linear 0s infinite;
+      }
+      .box:nth-child(2) {
+        background-image: url("https://scontent.fala5-2.fna.fbcdn.net/v/t1.6435-9/53359516_1324999820975230_3308639889108500480_n.jpg?_nc_cat=110&cb=99be929b-3346023f&ccb=1-7&_nc_sid=4dc865&_nc_ohc=09jQd33PZboAX-Ffcvs&_nc_ht=scontent.fala5-2.fna&oh=00_AfBZQFBRh-P5j_XeR0p6lnvr_-ZzCCQtNoQtgsDGC8xTDw&oe=64FD4F6F");
+        animation: move 25s cubic-bezier(0.3, 0.05, 0.15, 1) 0s infinite, paralax 25s linear 2.5s infinite;
+      }
+      .box:nth-child(3) {
+        background-image: url("https://scontent.fala5-2.fna.fbcdn.net/v/t1.6435-9/54044969_1325001304308415_6222603340623118336_n.jpg?_nc_cat=103&cb=99be929b-3346023f&ccb=1-7&_nc_sid=4dc865&_nc_ohc=szAuBLbcKnoAX9CjBFd&_nc_ht=scontent.fala5-2.fna&oh=00_AfBLWCZfT0wlqyqFlM2Z9nxdPCtB2qeOZRmMvq9Q3UGmsA&oe=64FD44D0");
+        animation: move 25s cubic-bezier(0.3, 0.05, 0.15, 1) 0s infinite, paralax 25s linear 6.25s infinite;
+      }
+      .box:nth-child(4) {
+        background-image: url("https://scontent.fala5-2.fna.fbcdn.net/v/t1.6435-9/53685708_1324999634308582_8268136929011171328_n.jpg?_nc_cat=103&cb=99be929b-3346023f&ccb=1-7&_nc_sid=4dc865&_nc_ohc=4I9EkoY-JvoAX8-rTXu&_nc_ht=scontent.fala5-2.fna&oh=00_AfBAn7h36nK021lB5ra4keNTnquUnkwGXLdOshK-CLksPg&oe=64FD3212");
+        animation: move 25s cubic-bezier(0.3, 0.05, 0.15, 1) 0s infinite, paralax 25s linear 10s infinite;
+      }
+      .box:nth-child(5) {
+        background-image: url("https://scontent.fala5-2.fna.fbcdn.net/v/t1.6435-9/31755388_1096542623820952_2955942302951931904_n.jpg?_nc_cat=106&cb=99be929b-3346023f&ccb=1-7&_nc_sid=4dc865&_nc_ohc=VYIhnP-5QOUAX9h5iHN&_nc_ht=scontent.fala5-2.fna&oh=00_AfADXWROriLUgmjG26CbXPOi3w173NXAdMq49xCP8B_Hsw&oe=64FD48C3");
+        animation: move 25s cubic-bezier(0.3, 0.05, 0.15, 1) 0s infinite, paralax 25s linear 13.75s infinite;
+      }
+      .box:nth-child(6) {
+        background-image: url("https://scontent.fala5-2.fna.fbcdn.net/v/t1.6435-9/31739784_1096535590488322_4178423268228726784_n.jpg?_nc_cat=105&cb=99be929b-3346023f&ccb=1-7&_nc_sid=4dc865&_nc_ohc=EyZq98IAIW8AX-1LOF6&_nc_ht=scontent.fala5-2.fna&oh=00_AfBNshwaiSTUnYedcECEN0FQWy03TF2z1zNWtOigPM1H4g&oe=64FD3661");
+        animation: move 25s cubic-bezier(0.3, 0.05, 0.15, 1) 0s infinite, paralax 25s linear 17.5s infinite;
+      }
+
+      @keyframes paralax {
+        0% {background-position: 20% 0%;}
+        /* 5% {background-position: 40% 0%;}
+        15% {background-position: 60% 0%;}
+        20% {background-position: 100% 0%;} */
+        40% {background-position: 100% 0%;}
+        100% {background-position: 0% 0%;}
+      }
+      @keyframes paralaxa {
+        0% {background-position: 40% 0%;}
+        10% {background-position: 60% 0%;}
+        15% {background-position: 100% 0%;}
+        80% {background-position: 100% 0%;}
+        81% {background-position: 40% 0%;}
+        100% {background-position: 40% 0%;}
+      }
+
+      @keyframes move {
+        0% {transform: translate(250%,0%);}
+        10% {transform: translate(250%,0%);}
+
+        15% {transform: translate(150%,0%);}
+        25% {transform: translate(150%,0%);}
+
+        30% {transform: translate(50%,0%);}
+        40% {transform: translate(50%,0%);}
+
+        45% {transform: translate(-50%,0%);}
+        55% {transform: translate(-50%,0%);}
+
+        60% {transform: translate(-150%,0%);}
+        70% {transform: translate(-150%,0%);}
+
+        75% {transform: translate(-250%,0%);}
+        85% {transform: translate(-250%,0%);}
+
+        100% {transform: translate(250%,0%);}
+      }
+
+      @keyframes animateButton {
+        0% {height: 20px;opacity: .5;}
+        10% {height: 20px;opacity: .5;}
+        15% {height: 40px;opacity: 1;}
+        25% {height: 40px;opacity: 1;}
+        30% {height: 20px;opacity: .5;}
+      }
+      @keyframes animateButtonA {
+        0% {height: 40px;opacity: 1;}
+        10% {height: 40px;opacity: 1;}
+        15% {height: 20px;opacity: .5;}
+        85% {height: 20px;opacity: .5;}
+        90% {height: 20px;opacity: .5;}
+        100% {height: 40px;opacity: 1;}
+      }
+      .controller {
+        position: absolute;
+        top: 85%;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        left: 50%;
+        transform: translate(-50%,0%);
+        align-items: flex-start;
+        justify-content: center;
+      }
+      .controller li {
+        background: white;
+        opacity: .5;
+        border: 1px solid rgba(0,0,0,.7);
+        list-style: none;
+        width: 6px;
+        height: 20px;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: .1s;
+      }
+      .controller li:hover {
+        height: 25px;
+        opacity: .7;
+      }
+      .controller li:nth-child(1) {
+        animation: animateButtonA 25s linear 0s infinite;
+      }
+      .controller li:nth-child(2) {
+        animation: animateButton 25s linear 0s infinite;
+      }
+      .controller li:nth-child(3) {
+        animation: animateButton 25s linear 3.75s infinite;
+      }
+      .controller li:nth-child(4) {
+        animation: animateButton 25s linear 7.5s infinite;
+      }
+      .controller li:nth-child(5) {
+        animation: animateButton 25s linear 11.25s infinite;
+      }
+      .controller li:nth-child(6) {
+        animation: animateButton 25s linear 15.25s infinite;
+      }
+      nav {
+        height: 6vh;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        overflow: hidden;
+        margin: 0px;
+        padding: 0px;
+        z-index: 2;
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      nav ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+      }
+      nav ul li {
+        list-style: none;
+        box-shadow: none;
+        height: 100%;
+        margin: 0px;
+        text-align: center;
+        transition: .2s;
+      }
+      nav ul li:hover {
+        box-shadow: 0px -3px 0px #01a0e2 inset;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-family: exo;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12pt;
+        padding: 0px 30px 0px 30px;
+      }
+      nav ul li a::before {
+        color: blue;
+        transform: translate(-1%,-1%);
+      }
+      .container {
+        position: absolute;
+        top: 100vh;
+        padding: 0px 40px 0px 40px;
+      }
+      h1 {
+        font-family: exo;
+        text-decoration: underline;
+        text-decoration-color: #01a0e2;
+        position: sticky;
+        top: 6vh;
+      }
+      footer {
+        background: #212121;
+        color: #e5e5e5;
+        padding: 10px;
+      }
+      .central {
+        z-index: 1;
+        top: 50vh;
+        position: absolute;
+        left: 50vw;
+        transform: translate(-50%,-50%);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        bottom: 1px solid rgba(255, 255, 255, 0.95);
+      }
+      .logo {
+        width: 200px;
+        height: 200px;
+        -webkit-filter: drop-shadow(2px 2px 0px navy);
+        filter: drop-shadow(2px 2px 0px navy);
+      }
+      .year {
+        font-size: 50px;
+        font-family: exo;
+        color: #01a0e2;
+        font-weight: 600;
+        text-shadow: 1px 1px navy;
+      }
+      .chris {
+        float: right;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#main">Main</a></li>
+        <li><a href="#about">About Speaker</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </nav>
+    <div class="central">
+      <img src="cafalogo.png" class="logo">
+      <span class="year">CAFA Conference 2023</span>
+    </div>
+    <section id="main">
+      <div id="track">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+      <ul class="controller">
+        <li id="1" onclick="goToSlide('1','250%')"></li>
+        <li id="2"></li>
+        <li id="3"></li>
+        <li id="4"></li>
+        <li id="5"></li>
+        <li id="6"></li>
+      </ul>
+    </section>
+    <div class="container">
+      <section id="about">
+        <h1>About Speaker</h1>
+        <img class="chris" src="https://or02000153.schoolwires.net/cms/lib/OR02000153/Centricity/Domain/47/Russo.jpg" alt="Chris Russo">
+        <p>Christopher Russo is the superintendent of Riverdale School District in Portland, Oregon. He is an experienced International School Director and Public School Assistant Superintendent with a demonstrated history of growing enrollment, stabilizing finances, and streamlining curriculum and instruction. Proficient in K-12 Education, Current Staff Development/Educational Practices, Fundraising, Board Relations, Community Outreach all with the purpose of equitable outcomes. Currently hold a US Superintendent certification and in process to completing an EdD in curriculum and instruction.</p>
+      </section>
+      <section id="resources">
+        <!-- <h1>Conference Resources</h1> -->
+      </section>
+    </div>
+    <script type="text/javascript">
+    function goToSlide(buttonID, transform) {
+      console.log(buttonID);
+      document.getElementById(buttonID).style.animationPlayState = "paused";
+      document.getElementById(buttonID).style.height = "40px";
+      document.getElementById(buttonID).style.opacity = "1";
+    }
+    </script>
+  </body>
+</html>

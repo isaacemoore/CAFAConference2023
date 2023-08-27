@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
       html {
@@ -160,7 +161,6 @@
         position: fixed;
         top: 0px;
         width: 100%;
-        overflow: hidden;
         margin: 0px;
         padding: 0px;
         z-index: 2;
@@ -216,11 +216,10 @@
         text-decoration-color: #01a0e2;
         position: sticky;
         top: 6vh;
-      }
-      footer {
-        background: #212121;
-        color: #e5e5e5;
-        padding: 10px;
+        background: rgba(255, 255, 255, .6);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
       }
       .central {
         z-index: 1;
@@ -256,15 +255,67 @@
       }
       .chris {
         float: right;
-        margin: 20px;
+        margin: 30px;
+      }
+      p {
+        max-width: 500px;
+      }
+      .box2 {
+        display:flex;align-items:flex-start;justify-content:center;
+      }
+      @media (max-width: 600px) {
+        nav ul li a {
+          font-size: 15pt;
+          padding: 0px;
+          margin: 0px;
+        }
+        nav {
+          width: 100vw;
+          height: 10vh;
+        }
+        nav ul {
+          justify-content: space-around;
+        }
+        .central {
+          width: 90%;
+          border-radius: 0px;
+        }
+        .year {
+          font-size: 30px;
+        }
+        .logo {
+          width: 100px;
+          height: 100px;
+        }
+        #track {
+          top: 10vh;
+          height: 90vh;
+        }
+        .container {
+          padding: 10px;
+          text-align: center;
+        }
+        h1 {
+          text-align: center;
+          top: 10vh;
+        }
+        .box2 {
+          display:block;
+          align-items:flex-start;
+          justify-content:center;
+        }
+        .chris {
+          float: none;
+          margin: 0px;
+        }
       }
     </style>
   </head>
   <body>
     <nav>
       <ul>
-        <li><a href="#main">Main</a></li>
-        <li><a href="#about">About Speaker</a></li>
+        <li><a href="#aboutconference">Conference</a></li>
+        <li><a href="#about">Speaker</a></li>
         <li><a href="#resources">Resources</a></li>
       </ul>
     </nav>
@@ -290,15 +341,128 @@
         <li id="6"></li>
       </ul>
     </section>
-    <div class="container">
+    <div class="container" style="width:95%;">
+      <section id="aboutconference">
+        <h1>About Conference</h1>
+        <div>
+          <b>29-30 September, 2023</b>
+          <h2>Workshop Highlights</h2>
+          <ul>
+            <li>An engaging keynote presentation by an expert in education</li>
+            <li>panel discussions and networking opportunities to foster collaboration and exchange of ideas</li>
+            <li>Mindfulness and well-being sessions to promote self-care and stress management</li>
+            <li>Takeaway resources, including lesson plans, instuctional materials and technology tools</li>
+          </ul>
+          <h2>Friday, September 29th</h2>
+          <table>
+            <tr>
+              <th>2:00-3:00 (Optional)</th>
+              <th>Counselors</th>
+              <th>Chris Russo</th>
+            </tr>
+            <tr>
+              <th>2:00-3:00 (Optional)</th>
+              <th>Directors Meeting</th>
+              <th>Jon Routh</th>
+            </tr>
+            <tr>
+              <th>3:00-4:00</th>
+              <th>Registration and student-led tours of the AIS campus</th>
+              <th>TBD</th>
+            </tr>
+            <tr>
+              <th>4:00-4:30</th>
+              <th>Welcome</th>
+              <th>TBD</th>
+            </tr>
+            <tr>
+              <th>4:30-6:00</th>
+              <th>Keynote Speaker- Power of Story Telling</th>
+              <th>Chriss Russo</th>
+            </tr>
+            <tr>
+              <th>6:00-9:00</th>
+              <th>Dinner and Bonfire</th>
+              <th>Birch Area</th>
+            </tr>
+          </table>
+          <h2>Saturday, September 30th</h2>
+          <table>
+            <tr>
+              <th>8:30-9:00</th>
+              <th>Coffee and Registration</th>
+              <th>Gym</th>
+            </tr>
+            <tr>
+              <th>9:00-10:00</th>
+              <th>Keynote - Applying Storytelling to the Classroom</th>
+              <th>Chris Russo</th>
+            </tr>
+            <tr>
+              <th>10:00-11:00</th>
+              <th>Break Out Session 1</th>
+              <th>Classrooms</th>
+            </tr>
+            <tr>
+              <th>11:00-12:00</th>
+              <th>Break Out Session 2</th>
+              <th>Classrooms</th>
+            </tr>
+            <tr>
+              <th>12:00-1:00</th>
+              <th>Lunch</th>
+              <th>Birch Area</th>
+            </tr>
+            <tr>
+              <th>1:00-2:00</th>
+              <th>Break Out Session 3</th>
+              <th>Classrooms</th>
+            </tr>
+            <tr>
+              <th>2:00-4:00</th>
+              <th>Job-a-likes</th>
+              <th>Classrooms</th>
+            </tr><tr>
+              <th>4:00-4:30</th>
+              <th>Closing Remarks</th>
+              <th>Gym</th>
+            </tr>
+          </table>
+        </div>
+      </section>
       <section id="about">
         <h1>About Speaker</h1>
-        <img class="chris" src="https://or02000153.schoolwires.net/cms/lib/OR02000153/Centricity/Domain/47/Russo.jpg" alt="Chris Russo">
-        <p>Christopher Russo is the superintendent of Riverdale School District in Portland, Oregon. He is an experienced International School Director and Public School Assistant Superintendent with a demonstrated history of growing enrollment, stabilizing finances, and streamlining curriculum and instruction. Proficient in K-12 Education, Current Staff Development/Educational Practices, Fundraising, Board Relations, Community Outreach all with the purpose of equitable outcomes. Currently hold a US Superintendent certification and in process to completing an EdD in curriculum and instruction.</p>
+        <div class="box2">
+          <img class="chris" src="https://or02000153.schoolwires.net/cms/lib/OR02000153/Centricity/Domain/47/Russo.jpg" alt="Chris Russo">
+          <div>
+            <p>
+            Chris grew up in a small, ethnically diverse town in NY filled with Italian, Lebanese, and Polish immigrants and their descendants. His father and his parents spoke Italian. His dad’s sisters married Lebanese and Polish immigrants. His All-American mom was the daughter of a German immigrant and a country girl. Chris’s cross-cultural family and early childhood were his foundation where many of his stories found seed.
+          </p>
+          <p>
+            Chris’s passion for education and predisposition for art came from his mother, a neurodiverse teacher in his small town who loved to paint, draw, and play the piano. Chris’s thirst for culture and language, complemented by an unshakable work ethic, came from his father, a chef in a local Italian restaurant. Chris learned how to connect and create community, the foundation and purpose of his stories, through the impacts and influences of his parents.
+
+          </p>
+            <p>
+            Chris studied at St. Bonaventure University near his hometown, earning his BA and MA in literature, teaching, and Ancient Greek. Immediately following university, he continued his studies in England, earning a certificate in linguistics, cultivating a specific interest in the “sounds and meanings of words.” Words and their power have always held particular magic for Chris. Later in life, after 15 years of teaching, Chris continued his studies at Portland State and Lewis and Clark Universities to earn degrees in school administration. Chris is completing his academic journey by earning an EdD in school administration. In his studies is where Chris learned about the science of storytelling.
+          </p>
+          <p>
+
+            Chris has lived and worked in 4 different countries and has traveled and experienced the culture of over 30. He speaks several languages to varying degrees of fluency and has 27 years of beautifully diverse educational experience–17 of which have been in school administration. He currently serves as Superintendent of Riverdale School District and previously served for 5 years as the Director of the American School of Asuncion in Paraguay. Chris has added chapters to his storytelling through rich travel and various teaching and administrative experience.
+          </p>
+          <p>
+            Most importantly, Chris is a proud father of two boys, 12 and 16, and has been married to his partner in life for over 20 years. Chris loves cooking, painting, climbing, traveling, woodworking, collecting stray South American cats, and listening to and telling good stories with friends. His family, complemented by diverse interests and experiences, with a never-ending flow of new friends coming into his life, have given him the raw materials and inspiration to continue connecting and educating through storytelling.
+            </p>
+          </div>
+          <div>
+        </div>
       </section>
       <section id="resources">
-        <!-- <h1>Conference Resources</h1> -->
+        <h1>Conference Resources</h1>
+        <div>
+          <a href="https://docs.google.com/document/d/1lB3cS6YbsC6A_ysqh6A4Q3BOH5y5xP8M/edit?usp=sharing_eil_m&rtpof=true&sd=true&invite=CIiE3rcB&ts=64e3af4f&sh=ZJyljcG_1egYkdyd&ca=1">Storytelling Prep</a>
+        </div>
       </section>
+      <footer style="height:300px;"></footer>
     </div>
     <script type="text/javascript">
     function goToSlide(buttonID, transform) {
